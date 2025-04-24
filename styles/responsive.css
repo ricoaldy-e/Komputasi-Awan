@@ -1,0 +1,288 @@
+:root {
+    /* Colors */
+    --counterBackgroundColor: #fff;
+    --primaryTextColor: #fff;
+    --secondaryTextColor: #aaa;
+    --primaryBackgroundColor: #0a0b0a;
+    --secondaryBackgroundColor: #1a191a;
+    --thirdBackgroundColor: #2a292b;
+
+    /* Sizing */
+    --sectionPadding: 6rem 0;
+}
+
+#nav-mobile {
+    display: none;
+}
+
+/* Hamburger */
+#burger-navigation {
+    width: 40px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+#burger-navigation span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #FFF;
+    opacity: 1;
+    left: 0;
+    transition: .25s ease-in-out;
+}
+
+#burger-navigation span:nth-child(1) {
+    top: 0px;
+}
+
+#burger-navigation span:nth-child(2) {
+    top: 13px;
+}
+
+#burger-navigation span:nth-child(3) {
+    top: 26px;
+}
+
+#burger-navigation.open span:nth-child(1) {
+    top: 13px;
+    transform: rotate(135deg);
+}
+
+#burger-navigation.open span:nth-child(2) {
+    opacity: 0;
+}
+
+#burger-navigation.open span:nth-child(3) {
+    top: 13px;
+    transform: rotate(-135deg);
+}
+
+/* Mobile Navigation */
+#header-info {
+    z-index: 99;
+}
+
+.nav-mobile {
+    z-index: 9;
+    position: relative;
+    background: var(--primaryBackgroundColor);
+}
+
+.nav-mobile-main {
+    width: 100%;
+    height: 475px;
+    position: absolute;
+    transform: translateY(-100%);
+    transition: .3s ease-in-out;
+    background-color: var(--primaryBackgroundColor);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.75rem;
+}
+
+.nav-mobile-main a {
+    color: #fff;
+    font-size: 1.1rem;
+    opacity: 0;
+    transition-delay: 2s;
+    transition: 1s ease-in-out;
+}
+
+.nav-mobile-main a:hover {
+    text-decoration: line-through;
+}
+
+.menu-active { 
+    transform: translateY(0%);
+}
+
+.menu-active a {
+    opacity: 1;
+}
+
+@media screen and (max-width: 1200px) {
+    #hero h1 {
+        font-size: 2rem;
+        letter-spacing: 3px;
+        margin: 2rem 0;
+    }
+    
+    p, span {
+        font-size: .9rem;
+        line-height: 1.8rem;
+    }
+
+    .info-social {
+        display: none;
+    }
+
+    .header-info {
+        justify-content: center;
+    }
+
+    /* Mobile Navigation */
+    #nav-desktop {
+        display: none;
+    }
+
+    #nav-mobile {
+        display: block;
+    }
+
+    #nav-mobile h1 {
+        font-size: 1.4rem;
+    }
+
+    .map iframe {
+        height: 400px;
+    }
+
+    .footer-info-items {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .footer-info-items > div {
+        padding: 0 1rem;
+    }
+    
+    .opening-times-schedule {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-items {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: .75rem;
+    }
+
+    .footer-right, .footer-left {
+        text-align: center;
+    }
+
+    .footer-mid {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Hero section */
+    #hero h1 {
+        font-size: 2rem;
+        letter-spacing: 3px;
+        margin: 1rem 0;
+    }
+    
+    #hero h4 {
+        font-size: 0.9rem;
+    }
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-button {
+        width: 80%;
+        margin-bottom: 1rem;
+    }
+    
+    /* Navigation mobile */
+    .nav-mobile-main {
+        height: auto;
+        padding: 2rem 0;
+    }
+    
+    .nav-mobile-main a {
+        font-size: 1rem;
+        padding: 0.5rem 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Menu section */
+    .menu-details {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .menu-item {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .menu-item div:last-child {
+        align-self: flex-start;
+    }
+    
+    .section-title, .sub-section-title {
+        padding: 0 1rem;
+    }
+    
+    .standing-line {
+        height: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Reservation form */
+    .reservation-items {
+        grid-template-columns: 1fr;
+    }
+    
+    .reservation-item-info {
+        text-align: center;
+    }
+    
+    .opening-times-schedule {
+        justify-content: center;
+    }
+    
+    .contact-info-social {
+        justify-content: center;
+    }
+    
+    .reservation-item-form button {
+        width: 100%;
+        padding: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Footer */
+    .footer-info-items {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .footer-info-items > div {
+        padding: 0 1rem;
+    }
+    
+    .opening-times-schedule {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-copyright {
+        padding: 1.5rem;
+    }
+    
+    .footer-mid {
+        order: -1;
+        margin-bottom: 1rem;
+    }
+    
+    .footer-left, .footer-right {
+        text-align: center;
+    }
+}
